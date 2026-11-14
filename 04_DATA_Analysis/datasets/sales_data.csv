@@ -1,0 +1,28 @@
+Order_ID,Order_Date,Product,Category,Quantity,Unit_Price,Region,Sales
+ORD001,2025-01-05,Laptop,Electronics,2,45000,North,90000
+ORD002,2025-01-12,Mouse,Electronics,5,500,South,2500
+ORD003,2025-02-03,Chair,Furniture,3,3500,East,10500
+ORD004,2025-02-15,Notebook,Stationery,10,50,West,500
+ORD005,2025-03-08,Keyboard,Electronics,4,1200,North,4800
+ORD006,2025-03-19,Desk,Furniture,2,8000,South,16000
+ORD007,2025-04-02,Pen,Stationery,20,10,East,200
+ORD008,2025-04-17,Headphones,Electronics,3,2000,West,6000
+ORD009,2025-05-06,Bookshelf,Furniture,1,7000,North,7000
+ORD010,2025-05-21,Markers,Stationery,8,100,South,800
+ORD011,2025-06-04,Monitor,Electronics,2,15000,East,30000
+ORD012,2025-06-18,Office Chair,Furniture,2,4500,West,9000
+ORD013,2025-07-09,Notebook,Stationery,15,50,North,750
+ORD014,2025-07-22,Mouse,Electronics,6,500,South,3000
+ORD015,2025-08-11,Study Table,Furniture,2,9000,East,18000
+ORD016,2025-08-25,Pen,Stationery,30,10,West,300
+ORD017,2025-09-03,Laptop,Electronics,1,45000,North,45000
+ORD018,2025-09-16,Desk,Furniture,1,8000,South,8000
+ORD019,2025-10-07,Markers,Stationery,12,100,East,1200
+ORD020,2025-10-20,Keyboard,Electronics,3,1200,West,3600
+ORD021,2025-11-05,Chair,Furniture,4,3500,North,14000
+ORD022,2025-11-19,Headphones,Electronics,2,2000,South,4000
+ORD023,2025-12-08,Notebook,Stationery,25,50,East,1250
+ORD024,2025-12-21,Monitor,Electronics,1,15000,West,15000
+ORD025,2025-12-25,,Stationery,10,50,North,500
+ORD026,2025-12-27,Mouse,Electronics,3,,South,0
+ORD027,2025-12-28,Desk,Furniture,2,8000,,16000

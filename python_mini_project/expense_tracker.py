@@ -1,16 +1,10 @@
-"""
-PERSONAL EXPENSE TRACKER
-A command-line Python project with CSV persistence, summaries and reports.
-
-Run: python expense_tracker.py
-No third-party packages are required.
-"""
 
 import csv
 from datetime import date, datetime
 from pathlib import Path
 
 DATA_FILE = Path(__file__).with_name("expenses.csv")
+
 CATEGORIES = [
     "Food", "Transport", "Shopping", "Education",
     "Bills", "Entertainment", "Health", "Other"
@@ -18,16 +12,16 @@ CATEGORIES = [
 
 
 def load_expenses():
-    """Load saved transactions from the CSV file."""
     if not DATA_FILE.exists():
         return []
+
     with DATA_FILE.open("r", newline="", encoding="utf-8") as file:
         return list(csv.DictReader(file))
 
 
 def save_expenses(expenses):
-    """Save transactions so they remain available after closing the app."""
     fields = ["date", "category", "description", "amount"]
+
     with DATA_FILE.open("w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=fields)
         writer.writeheader()
@@ -35,16 +29,18 @@ def save_expenses(expenses):
 
 
 def get_amount():
-    """Validate the amount entered by the user."""
     while True:
         try:
             amount = float(input("Amount (INR): ").strip())
+
             if amount <= 0:
                 print("Amount must be greater than zero.")
                 continue
+
             return round(amount, 2)
+
         except ValueError:
-            print("Enter a valid number, for example 125.50.")
+            print("Enter a valid amount.")
 
 
 def add_expense(expenses):
@@ -52,16 +48,19 @@ def add_expense(expenses):
     print("Categories:", ", ".join(CATEGORIES))
 
     category = input("Category: ").strip().title()
+
     if category not in CATEGORIES:
-        print("Choose a category from the displayed list.")
+        print("Invalid category.")
         return
 
     description = input("Description: ").strip()
+
     if not description:
         print("Description cannot be empty.")
         return
 
     amount = get_amount()
+
     entered_date = input(
         f"Date [YYYY-MM-DD, Enter for {date.today()}]: "
     ).strip()
@@ -81,34 +80,42 @@ def add_expense(expenses):
         "description": description,
         "amount": f"{amount:.2f}"
     })
+
     save_expenses(expenses)
-    print("Expense saved successfully.")
+    print("Expense added successfully.")
 
 
 def view_expenses(expenses):
     print("\n--- EXPENSE HISTORY ---")
+
     if not expenses:
         print("No expenses recorded yet.")
         return
 
-    print(f"{'No.':<5}{'Date':<13}{'Category':<16}{'Description':<24}{'Amount (INR)':>15}")
+    print(
+        f"{'No.':<5}{'Date':<13}{'Category':<16}"
+        f"{'Description':<24}{'Amount (INR)':>15}"
+    )
     print("-" * 73)
 
     for number, item in enumerate(expenses, start=1):
         print(
             f"{number:<5}{item['date']:<13}{item['category']:<16}"
-            f"{item['description'][:22]:<24}{float(item['amount']):>15.2f}"
+            f"{item['description'][:22]:<24}"
+            f"{float(item['amount']):>15.2f}"
         )
 
 
 def spending_summary(expenses):
     print("\n--- SPENDING SUMMARY ---")
+
     if not expenses:
         print("No data available. Add an expense first.")
         return
 
     total = sum(float(item["amount"]) for item in expenses)
     month = date.today().strftime("%Y-%m")
+
     monthly_total = sum(
         float(item["amount"])
         for item in expenses
@@ -123,16 +130,19 @@ def spending_summary(expenses):
 
 def category_report(expenses):
     print("\n--- CATEGORY-WISE BREAKDOWN ---")
+
     if not expenses:
         print("No data available. Add an expense first.")
         return
 
     totals = {}
+
     for item in expenses:
         category = item["category"]
         totals[category] = totals.get(category, 0) + float(item["amount"])
 
     grand_total = sum(totals.values())
+
     print(f"{'Category':<20}{'Amount (INR)':>16}{'Share':>12}")
     print("-" * 48)
 
@@ -148,22 +158,27 @@ def category_report(expenses):
 
 def delete_expense(expenses):
     print("\n--- DELETE EXPENSE ---")
+
     if not expenses:
         print("There are no expenses to delete.")
         return
 
     view_expenses(expenses)
+
     try:
         number = int(input("Enter the expense number to delete: "))
+
         if not 1 <= number <= len(expenses):
-            print("That expense number does not exist.")
+            print("Invalid expense number.")
             return
+
     except ValueError:
         print("Enter a valid whole number.")
         return
 
     removed = expenses.pop(number - 1)
     save_expenses(expenses)
+
     print(f"Deleted '{removed['description']}'.")
 
 
