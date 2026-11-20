@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Iris Flower Classification using Machine Learning
 
 A beginner-level Machine Learning project that classifies Iris flowers into three species using Logistic Regression and Scikit-learn.
@@ -74,3 +75,7 @@ python src/predict.py
 ## Learning Outcome
 
 This project provided hands-on experience with supervised Machine Learning, data exploration, model training, evaluation metrics and predictions using Scikit-learn.
+=======
+# AI-ML-Industrial-Training
+Industrial training work covering Artificial Intelligence, Machine Learning fundamentals and Python programming.
+>>>>>>> 33d155d41df0b5be1bc230b7e918bc35986ce61b
