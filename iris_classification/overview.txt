@@ -1,0 +1,86 @@
+# Project Overview: Iris Flower Classification Using Machine Learning
+
+## 1. Introduction
+
+The aim of this project was to learn the basics of Machine Learning by building a simple flower classification model. For this, I used the Iris dataset, which is available in the Scikit-learn library.
+
+The dataset contains 150 flower samples belonging to three species: Setosa, Versicolor, and Virginica. Each sample has four measurements: sepal length, sepal width, petal length, and petal width.
+
+Using these measurements, I trained a model that can identify which species a flower belongs to.
+
+## 2. Project Objectives
+
+The main objectives of this project were:
+
+- To understand how a basic Machine Learning workflow works.
+- To learn how to load and explore a dataset using Python.
+- To understand the basics of data preprocessing and Exploratory Data Analysis (EDA).
+- To train a Machine Learning model using Scikit-learn.
+- To test the model and check how accurately it makes predictions.
+- To use the trained model to predict the species of new flower samples.
+
+## 3. Tools and Technologies Used
+
+The following Python libraries and tools were used:
+
+- **Python 3.14:** Used for writing and executing the code.
+- **Scikit-learn:** Used to load the dataset, train the model, and evaluate its performance.
+- **Pandas:** Used for handling and exploring the dataset.
+- **NumPy:** Used for numerical operations.
+- **Matplotlib and Seaborn:** Used to create visualizations and understand the data.
+- **Joblib:** Used to save and load the trained model.
+
+## 4. Work Performed
+
+The project was completed in the following steps:
+
+**Step 1: Loading the Dataset**
+
+I started by loading the Iris dataset directly from Scikit-learn and converting it into a Pandas DataFrame. I also saved a copy of the dataset as a CSV file for future use.
+
+**Step 2: Exploring the Data**
+
+I examined the dataset to understand its structure, columns, data types, and statistical information. I also checked for missing values.
+
+**Step 3: Data Visualization**
+
+Using Seaborn, I created visualizations to observe how the measurements differ across the three flower species. This helped me understand which features are useful for classification.
+
+**Step 4: Preparing the Data**
+
+I separated the four flower measurements into input features (X) and the species column into the target variable (y).
+
+The dataset was then divided into training and testing sets, with 80% of the data used for training and 20% reserved for testing.
+
+**Step 5: Training the Model**
+
+I used Logistic Regression as the classification algorithm. StandardScaler was included in a Scikit-learn pipeline to standardize the input measurements before training.
+
+The model was trained using the training dataset.
+
+**Step 6: Testing and Evaluation**
+
+After training, I tested the model using the data that had been kept aside. I used accuracy, precision, recall, F1-score, and a confusion matrix to understand how well the model performed.
+
+**Step 7: Making Predictions**
+
+Finally, I used the saved model to predict the species of a new flower by providing its four measurements as input.
+
+## 5. Project Structure
+
+To keep the project organised, I divided the files into separate directories:
+
+- `data/` – Contains the Iris dataset in CSV format.
+- `notebooks/` – Contains the Jupyter notebook used for data exploration.
+- `src/` – Contains separate Python scripts for loading data, training, evaluation, and prediction.
+- `models/` – Stores the trained model.
+- `outputs/` – Stores the testing data used during evaluation.
+- `requirements.txt` – Contains the list of required Python libraries.
+
+## 6. Conclusion
+
+Working on this project gave me a basic understanding of how Machine Learning works in practice. I got to work with a real dataset, explore and prepare data, train a classification model, and test its predictions.
+
+It was also my first hands-on experience with Scikit-learn and helped me understand how different stages of a Machine Learning project fit together.
+
+Overall, this project served as a starting point for learning Machine Learning and gave me practical experience in building and testing a simple predictive model.
